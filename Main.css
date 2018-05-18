@@ -2,19 +2,20 @@
     font-family: Orbitron;
     box-sizing: border-box;
 }
-.mainWindow{  
+.mainWindow{
     border: 1px solid black;
     border-radius: 3px;
     width: 600px;
-    height: 600px;
+    height: 580px;
 }
 .windowHeader{
+    width: 100%;
     padding: 5px;
     border-bottom: 1px solid black;
 }
-h1{
-    margin: 0%;
-    padding: 0%;
+p{
+    margin: 0;
+    padding: 0;
     font-weight: 800;
     color: black;
     text-align: center;
@@ -22,6 +23,8 @@ h1{
 .chatWindow{
     height: 520px;
     border-bottom: 1px solid black;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 [type="submit"]{
     cursor: pointer;
@@ -34,4 +37,7 @@ h1{
     width: 490px;
     padding-left: 2px;
     padding-top: 5px;
+}
+#result{
+    list-style-type: circle;
 }

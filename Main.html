@@ -9,10 +9,12 @@
 <body>
 <div class="mainWindow">
     <div class="windowHeader">
-        <h1>Veru chat</h1>
+        <p>Veru chat</p>
     </div>
 <div class="chatWindow">
-    <p id="result"></p>
+    <ul>
+    <li id="result"></li>
+    </ul>
 </div>
 <div class="chatBottom">
     <form id="chatMessage">
@@ -27,9 +29,12 @@
     form.onsubmit = function(event){
         event.preventDefault();
         var result = document.getElementById('result');
-        result.innerHTML = result.innerHTML + "<br>" + form.text.value;
+        result.innerHTML = result.innerHTML + "<li>" + "<strong>" + datetime + ":</strong>" + " " + form.text.value + "</li>";
         form.reset();
     }
+    var currentdate = new Date(); 
+        var datetime = currentdate.getHours() + ":"  
+            + currentdate.getMinutes();
 </script>
 
 </body>
