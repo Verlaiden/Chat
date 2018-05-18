@@ -1,0 +1,37 @@
+*{
+    font-family: Orbitron;
+    box-sizing: border-box;
+}
+.mainWindow{  
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 600px;
+    height: 600px;
+}
+.windowHeader{
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+h1{
+    margin: 0%;
+    padding: 0%;
+    font-weight: 800;
+    color: #420;
+    text-align: center;
+}
+.chatWindow{
+    height: 520px;
+    border-bottom: 1px solid black;
+}
+[type="submit"]{
+    cursor: pointer;
+    width: 100px;
+    padding-left: 5px;
+    position: relative;
+    top: -2px;    
+}
+[type="text"]{
+    width: 490px;
+    padding-left: 2px;
+    padding-top: 5px;
+}
