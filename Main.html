@@ -12,6 +12,7 @@
         <h1>Veru chat</h1>
     </div>
 <div class="chatWindow">
+    <p id="result"></p>
 </div>
 <div class="chatBottom">
     <form id="chatMessage">
@@ -19,7 +20,6 @@
         <input type="submit" name="submit" value="Post" />
     </form>
 </div>
-<p id="result"></p>
 </div>
 
 <script>
@@ -27,7 +27,7 @@
     form.onsubmit = function(event){
         event.preventDefault();
         var result = document.getElementById('result');
-        result.innerHTML = form.text.value;
+        result.innerHTML = result.innerHTML + "<br>" + form.text.value;
         form.reset();
     }
 </script>
