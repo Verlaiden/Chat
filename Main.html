@@ -49,12 +49,11 @@
     formMessage.onsubmit = function(event){
         event.preventDefault();
         var result = document.getElementById('result');
-        result.innerHTML = result.innerHTML + "<li>" + "<strong>" + datetime + ":</strong>" + " " +"@"+nick +": "+ formMessage.text.value + "</li>";
+        result.innerHTML = result.innerHTML + "<li>" + "<strong>" + datetime + ":</strong>" + " @"+nick + ": " + formMessage.text.value + "</li>";
         formMessage.reset();
     }
     var currentdate = new Date(); 
-        var datetime = currentdate.getHours() + ":"  
-            + currentdate.getMinutes();
+        var datetime = currentdate.getHours() + ":" + currentdate.getMinutes();
 </script>
 
 </body>
