@@ -1,60 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" type="text/css" href="Main.css">
-<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-<title>Veru chat</title>
+    <link rel="stylesheet" type="text/css" href="Main.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <title>Veru chat</title>
 </head>
 
 <body>
-
-<div id="nickDiv">
-    <form id="nick">
-         <input type="text" name="nick" id="nickname" value="" placeholder="Enter your nickname" />
-        <input type="submit" name="nickButton" value="Enter" />
-    </form>
-</div>
-
-<div class="main">
-<div class="mainWindow">
-    <div class="windowHeader">
-        <p>Veru chat</p>
+    <div id="nickDiv">
+        <form id="nick">
+            <input type="text" name="nick" id="nickname" value="" placeholder="Enter your nickname" />
+            <input type="submit" name="nickButton" value="Enter" />
+        </form>
     </div>
-<div class="chatWindow">
-    <ul>
-    <li id="result"></li>
-    </ul>
-</div>
-<div class="chatBottom">
-    <form id="chatMessage">
-        <input type="text" name="text" id="text" value="" placeholder="Enter message" />
-        <input type="submit" name="submit" value="Post" />
-    </form>
-</div>
-</div>
-</div>
 
+    <div class="main">
+        <div class="mainWindow">
+            <div class="windowHeader">
+                <p>Veru chat</p>
+            </div>
+            <div class="chatWindow">
+                <ul>
+                    <li id="result"></li>
+                </ul>
+            </div>
+            <div class="chatBottom">
+                <form id="chatMessage">
+                    <input type="text" name="text" id="text" value="" placeholder="Enter message" />
+                    <input type="submit" name="submit" value="Post" />
+                </form>
+            </div>
+        </div>
+    </div>
 
-<script>
-    var nick = "";
-    var nameNickname = document.getElementById("nick");
-    nameNickname.onsubmit = function(evt){
-        evt.preventDefault();
-        var elem = document.getElementById("nickDiv");
-        nick = nameNickname.nick.value;
-        elem.remove();
-    }
-
-    var formMessage = document.getElementById('chatMessage');
-    formMessage.onsubmit = function(event){
-        event.preventDefault();
-        var result = document.getElementById('result');
-        result.innerHTML = result.innerHTML + "<li>" + "<strong>" + datetime + ":</strong>" + " @"+nick + ": " + formMessage.text.value + "</li>";
-        formMessage.reset();
-    }
-    var currentdate = new Date(); 
-        var datetime = currentdate.getHours() + ":" + currentdate.getMinutes();
-</script>
+    <footer>
+        <script src="js.js"></script>
+    </footer>
 
 </body>
+
 </html>
