@@ -15,5 +15,14 @@ formMessage.onsubmit = function (event) {
     result.innerHTML = result.innerHTML + "<li>" + "<strong>" + datetime + ":</strong>" + " @" + nick + ": " + formMessage.text.value + "</li>";
     formMessage.reset();
 }
+function properTimeFormat(time) {
+    if (time.toString().length == 1) {
+        return "0" + time;
+    }
+    else {
+        return time;
+    }
+}
 var currentdate = new Date();
-var datetime = currentdate.getHours() + ":" + currentdate.getMinutes();
+var datetime = properTimeFormat(currentdate.getHours()) + ":" + properTimeFormat(currentdate.getMinutes());
+console.log(currentdate.getHours());
