@@ -25,4 +25,3 @@ function properTimeFormat(time) {
 }
 var currentdate = new Date();
 var datetime = properTimeFormat(currentdate.getHours()) + ":" + properTimeFormat(currentdate.getMinutes());
-console.log(currentdate.getHours());

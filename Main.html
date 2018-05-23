@@ -9,8 +9,8 @@
 
 <body>
     <div id="nickDiv">
-        <form id="nick">
-            <input type="text" name="nick" id="nickname" value="" placeholder="Enter your nickname" />
+        <form id="nick" name="nickText" onsubmit="return validateForm()">
+            <input type="text" name="nick" id="nickname" value="" placeholder="Enter your nickname" required/>
             <input type="submit" name="nickButton" value="Enter" />
         </form>
     </div>
@@ -27,7 +27,7 @@
             </div>
             <div class="chatBottom">
                 <form id="chatMessage">
-                    <input type="text" name="text" id="text" value="" placeholder="Enter message" />
+                    <input type="text" name="text" id="text" value="" placeholder="Enter message" required/>
                     <input type="submit" name="submit" value="Post" />
                 </form>
             </div>
