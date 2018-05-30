@@ -1,27 +1,19 @@
 
-var nick = "";
-var nameNickname = document.getElementById("nick");
-nameNickname.onsubmit = function (evt) {
-    evt.preventDefault();
-    var elem = document.getElementById("nickDiv");
-    nick = nameNickname.nick.value;
+let nameNickname = document.getElementById("nick");
+nameNickname.onsubmit = function (e) {
+    e.preventDefault();
+    let elem = document.getElementById("nickDiv");
+    localStorage.setItem('nick', nameNickname.nick.value);
     elem.remove();
 }
 
-var formMessage = document.getElementById('chatMessage');
-formMessage.onsubmit = function (event) {
-    event.preventDefault();
-    var result = document.getElementById('result');
-    result.innerHTML = result.innerHTML + "<li>" + "<strong>" + datetime + ":</strong>" + " @" + nick + ": " + formMessage.text.value + "</li>";
+let formMessage = document.getElementById('chatMessage');
+formMessage.onsubmit = (e) => {
+    let currentdate = new Date();
+    let datetime = `${properTimeFormat(currentdate.getHours())}:${properTimeFormat(currentdate.getMinutes())}`;
+    e.preventDefault();
+    let result = document.getElementById('result');
+    result.innerHTML += `<li><strong>${datetime}:</strong> @${localStorage.getItem('nick')}: ${formMessage.text.value} </li>`;
     formMessage.reset();
 }
-function properTimeFormat(time) {
-    if (time.toString().length == 1) {
-        return "0" + time;
-    }
-    else {
-        return time;
-    }
-}
-var currentdate = new Date();
-var datetime = properTimeFormat(currentdate.getHours()) + ":" + properTimeFormat(currentdate.getMinutes());
+properTimeFormat = (num) => { return (num.toString().length == 1 ? `0${num}` : num); }
